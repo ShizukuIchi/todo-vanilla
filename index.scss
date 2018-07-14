@@ -1,0 +1,88 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width:100%;
+  height: 100%;
+  background-color: #FCF3CF;
+  font-family: 微軟正黑體;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width:500px;
+}
+.title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 35px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+.container {
+  box-shadow: 10px 10px 30px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  overflow: hidden;
+  padding: 15px;
+  background-color: #FFF;
+}
+.header {
+  border-bottom: 1px solid #000;
+}
+input#todo {
+  width: 100%;
+  font-size: 20px;
+  border: none;
+  padding-bottom: 5px;
+
+}
+.content {
+  position: relative;
+  div {
+    justify-content: flex-start;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.5px solid #000;
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+  div:hover {
+    .delete {
+      visibility: visible;
+    }
+  } 
+  .delete {
+    visibility: hidden;
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+    color: red;
+  }
+}
+@keyframes todo-in {
+  0% { height: 0; }
+  100% { height: 30px; }
+}
+@keyframes todo-out {
+  0% { height: 30px; }
+  100% { height: 0; }
+}
+.footer {
+  border-top: 1px solid #000;
+  padding-top: 10px;
+  background-color: #FFF;
+  display: flex;
+  justify-content: flex-end;
+  .filter {
+    margin-left: 10px; 
+    color: #AAA;
+    cursor: pointer;
+  }
+}
+
